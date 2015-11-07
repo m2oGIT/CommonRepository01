@@ -9,6 +9,15 @@ package Exception;
 public class ExceptionSample {
 
   /**
+   * コンストラクタ <br />
+   * デフォルトコンストラクタ <br />
+   */
+  public ExceptionSample() {
+    // 行うべき処理なし。
+    super();
+  }
+
+  /**
    * メインメソッド<br />
    * 処理を起動します。 <br />
    *

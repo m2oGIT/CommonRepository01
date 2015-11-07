@@ -18,6 +18,15 @@ import java.util.Properties;
 public class PreparedStatementSample {
 
   /**
+   * コンストラクタ <br />
+   * デフォルトコンストラクタ <br />
+   */
+  public PreparedStatementSample() {
+    // 行うべき処理なし。
+    super();
+  }
+
+  /**
    * メインメソッド<br />
    * 処理を起動します。 <br />
    *

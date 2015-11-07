@@ -9,6 +9,15 @@ package Collection;
 public class PrimitiveCollection {
 
   /**
+   * コンストラクタ <br />
+   * デフォルトコンストラクタ <br />
+   */
+  public PrimitiveCollection() {
+    // 行うべき処理なし。
+    super();
+  }
+
+  /**
    * メインメソッド<br />
    * 処理を起動します。 <br />
    *

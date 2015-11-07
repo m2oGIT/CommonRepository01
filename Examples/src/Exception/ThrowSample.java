@@ -12,6 +12,15 @@ import java.io.FileReader;
 public class ThrowSample {
 
   /**
+   * コンストラクタ <br />
+   * デフォルトコンストラクタ <br />
+   */
+  public ThrowSample() {
+    // 行うべき処理なし。
+    super();
+  }
+
+  /**
    * メインメソッド<br />
    * 処理を起動します。 <br />
    *

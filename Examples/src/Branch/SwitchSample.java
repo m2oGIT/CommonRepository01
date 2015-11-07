@@ -9,6 +9,15 @@ package Branch;
 public class SwitchSample {
 
   /**
+   * コンストラクタ <br />
+   * デフォルトコンストラクタ <br />
+   */
+  public SwitchSample() {
+    // 行うべき処理なし。
+    super();
+  }
+
+  /**
    * メインメソッド<br />
    * 処理を起動します。 <br />
    *

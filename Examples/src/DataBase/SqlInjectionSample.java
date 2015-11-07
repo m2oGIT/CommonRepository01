@@ -17,6 +17,15 @@ import java.util.Properties;
 public class SqlInjectionSample {
 
   /**
+   * コンストラクタ <br />
+   * デフォルトコンストラクタ <br />
+   */
+  public SqlInjectionSample() {
+    // 行うべき処理なし。
+    super();
+  }
+
+  /**
    * メインメソッド<br />
    * 処理を起動します。 <br />
    *

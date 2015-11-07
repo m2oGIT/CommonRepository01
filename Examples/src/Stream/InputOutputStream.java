@@ -12,6 +12,15 @@ import java.io.InputStreamReader;
 public class InputOutputStream {
 
   /**
+   * コンストラクタ <br />
+   * デフォルトコンストラクタ <br />
+   */
+  public InputOutputStream() {
+    // 行うべき処理なし。
+    super();
+  }
+
+  /**
    * メインメソッド<br />
    * 処理を起動します。 <br />
    *

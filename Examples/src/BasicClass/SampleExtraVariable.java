@@ -14,6 +14,15 @@ import Inheritance.NomalExtendsSample;
 public class SampleExtraVariable {
 
   /**
+   * コンストラクタ <br />
+   * デフォルトコンストラクタ <br />
+   */
+  public SampleExtraVariable() {
+    // 行うべき処理なし。
+    super();
+  }
+
+  /**
    * メインメソッド<br />
    * 処理を起動します。 <br />
    *
