@@ -30,8 +30,10 @@ public class ResourceBundleSample {
 
     // Java6.0で拡張されたResourceBundleクラスでの実装例。
 
-    // プロパティファイルのパスをクラスパス変数に追加する必要がある。
-    // 現在の環境でのクラスパスは以下の１行を実行すると確認できる。
+    // プロパティファイル（もしくはrunフォルダ）のパスをクラスパス変数に追加する必要がある。
+    // eclipseの場合は、「プロジェクト」＞「プロパティー」＞「Javaのビルドパス」から追加。
+
+    // 現在の環境でのクラスパス設定は以下の１行を実行すると確認できる。
     System.out.println( "CLASSPATH：" + System.getProperty( "java.class.path" ) );
 
     // ResourceBundleクラスのインスタンスを生成。

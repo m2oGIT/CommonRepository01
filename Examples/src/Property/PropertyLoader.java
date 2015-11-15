@@ -4,6 +4,7 @@
 
 package Property;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,14 +31,26 @@ public class PropertyLoader {
     // インスタンスを生成。
     conf = new Properties();
 
+    File fp = new File("foo.txt");
+    System.out.println( fp.getAbsolutePath());
+
+
     // ①InputStreamを利用してファイルを読み込む場合。＝相対パスまたは絶対パスで記述する。
-    InputStream inputStream = new FileInputStream(
-        "C:\\eclipse44\\workspace44\\Examples\\run\\properties\\standardprop.properties" );
+
+    // 絶対パス指定（自分のローカル環境合わせて修正する）
+    //String filePath = "C:\\xxxxxxxxxx\\Examples\\run\\properties\\standardprop.properties";
+
+    // 相対パス指定
+    String filePath = "run/properties/standardprop.properties";
+
+    InputStream inputStream = new FileInputStream( filePath );
     conf.load( inputStream );
     inputStream.close();
 
     // ②クラスローダーを使用してファイルを読み込む場合。＝クラスパスが通っている必要がある。
-    conf.load( this.getClass().getResourceAsStream( "/standardprop.properties" ) );
+    // eclipseの場合は、「プロジェクト」＞「プロパティー」＞「Javaのビルドパス」から追加。
+
+    //conf.load( this.getClass().getResourceAsStream( "properties/standardprop.properties" ) );
 
   }
 
