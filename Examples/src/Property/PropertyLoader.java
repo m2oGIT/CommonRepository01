@@ -39,6 +39,7 @@ public class PropertyLoader {
     // 相対パス指定
     String filePath = "run/properties/standardprop.properties";
 
+    // プロパティファイルを読み込む。
     InputStream inputStream = new FileInputStream( filePath );
     conf.load( inputStream );
     inputStream.close();
@@ -48,6 +49,24 @@ public class PropertyLoader {
 
     // conf.load( this.getClass().getResourceAsStream( "properties/standardprop.properties" ) );
 
+  }
+
+  /**
+   * コンストラクタ <br />
+   * プロパティファイルを読み込みます。（パスをコンストラクタ引数で受け取る） <br />
+   *
+   * @param filePath ファイルパス
+   * @throws IOException 入出力例外
+   */
+  public PropertyLoader( String filePath ) throws IOException {
+
+    // インスタンスを生成。
+    conf = new Properties();
+
+    // プロパティファイルを読み込む。
+    InputStream inputStream = new FileInputStream( filePath );
+    conf.load( inputStream );
+    inputStream.close();
   }
 
   /**

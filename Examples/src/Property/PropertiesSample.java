@@ -37,6 +37,8 @@ public class PropertiesSample {
     try {
       // 初期化処理の中でプロパティファイルを読み込む。
       loader = new PropertyLoader();
+      //呼び出し側からパスを指定する場合は引数ありコンストラクタを利用する
+      //loader = new PropertyLoader( "run/properties/standardprop.properties" );
     } catch ( IOException e ) {
       e.printStackTrace();
     }

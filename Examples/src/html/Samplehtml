@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>ホームページの練習</title>
+    </head>
+    <body>
+        <h1>初めてのホームページです。</h1>
+        <h2>
+            HTML文法の詳細は『Java勉強会_Webアプリケーションの概要.pdf』を通読の上、</br>
+            『とほぼのWWW入門』リンクから 『ホームページ入門』や『HTMLリファレンス』を参照してください。</br>
+            とほほのWWW入門： <a href="http://www.tohoho-web.com/www.htm">リンク</a></br>
+        </h2>
+    </body>
+</html>
