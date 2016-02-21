@@ -107,6 +107,15 @@ public class SampleExtraVariable {
     ext = next;
     ext.displayDate();
 
+    // int：整数型（4バイト符号付整数。-2147483648～2147483647）
+    Integer num4 = new Integer( 10 );
+    Integer num5 = new Integer( 20 );
+    Integer sum2 = num4 + num5;
+    System.out.println( "num4 + num5 の計算結果は " + sum2 + "です。" );
+
+    //型変換機能を利用する
+    num4 = Integer.valueOf( "1234567890" );
+
 
     /** なお、安易な型の変換は実行時エラーの温床となりやすい（特にキャストは強引に変換してしまうこともある）。 **/
     /** 考え方としては、初めから型変換の少ないロジックを組むことがベスト。 **/
