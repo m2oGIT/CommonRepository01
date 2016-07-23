@@ -11,6 +11,7 @@ import java.util.Properties;
 
 
 /**
+ * サーバーDB接続版 <br />
  * DBアクセッサの使い方（PreparedStatement） <br />
  * PreparedStatementクラスを使用した基本的な文法 <br />
  * 更新履歴 2015/10/28 山本 高志：新規作成 <br />
@@ -46,11 +47,12 @@ public class PreparedStatementSample {
 
     // SQL文を文字列で記述する。
     // PreparedStatementはvalueを一旦「?」で仮置きして仲介させる点が特徴（Statementクラスの持つ脆弱性への対策）。
-    String sqlSelect = "SELECT * FROM moeiwast_eiwatest_DB01.testTable";
-    String sqlInsert = "insert into moeiwast_eiwatest_DB01.testTable"
-        + " ( id, name, createdate, client, address ) values ( ?, ?, ?, ?, ? )";
+    String sqlSelect = "SELECT * FROM moeiwast_eiwatest_DB01.test01_yamamoto";
+    // String sqlInsert = "insert into moeiwast_eiwatest_DB01.test01_yamamoto"
+    // + " ( STAFF_NO, OFFICE_CD, STAFF_NAME, WORK_TIME, CREATE_DATE ) values ( ?, ?, ?, ?, ? )";
 
     // 接続先DBの指定文字列（DB製品ごとに原則定型）。
+    // サーバーDBを接続先とする場合。
     String url = "jdbc:mysql://m2o-eiwa.1strentalserver.info:3306/moeiwast_eiwatest_DB01";
 
     try {
@@ -61,31 +63,34 @@ public class PreparedStatementSample {
       // MySQLの場合、以下のように文字コード指定を含む接続情報を
       // PropertiesクラスにセットしてConnectionクラスに渡す。
       Properties props = new Properties();
-      props.put( "user", "moeiwast_user01" );
-      props.put( "password", "zaq12wsx_user01" );
+
       props.put( "useUnicode", "true" ); // 省略すると日本語が文字化けする。
       props.put( "characterEncoding", "SJIS" ); // 省略すると日本語が文字化けする。
+
+      // ①サーバーDBを接続先とする場合。※自分のID/PWDを指定する。
+      props.put( "user", "moeiwast_user01" );
+      props.put( "password", "zaq12wsx_user01" );
 
       // 接続情報を元に、コネクションを生成。
       conn = DriverManager.getConnection( url, props );
 
       // コネクションからステートメント（SQL実行用オブジェクト）を生成。
-      // pstmt = conn.prepareStatement( sqlSelect );
-      pstmt = conn.prepareStatement( sqlInsert );
+      pstmt = conn.prepareStatement( sqlSelect );
+      // pstmt = conn.prepareStatement( sqlInsert );
 
 
       // パラメータオブジェクトをセット。仮置きしていた「?」から具体的な値に置き換えている。
-      pstmt.setObject( 1, 23 );
-      pstmt.setObject( 2, "サンプルコードから登録" );
-      pstmt.setObject( 3, "2015/11/05" );
-      pstmt.setObject( 4, "N/A" );
-      pstmt.setObject( 5, "N/A" );
-
+      // サーバーDBのtest_tableを接続先とする場合。
+      // pstmt.setObject( 1, "12345678901" );
+      // pstmt.setObject( 2, "123" );
+      // pstmt.setObject( 3, "サンプルプログラムから登録" );
+      // pstmt.setObject( 4, "99999" );
+      // pstmt.setObject( 5, "2016/07/23" );
 
       // SQLを実行。
       // 参照系（Select）と更新系でメソッドが異なる。
-      // rs = pstmt.executeQuery();
-      count = pstmt.executeUpdate();
+      rs = pstmt.executeQuery();
+      // count = pstmt.executeUpdate();
 
 
       // 検索結果を表示する。（executeQuery実行時）
@@ -95,11 +100,11 @@ public class PreparedStatementSample {
         while ( rs.next() ) {
 
           // カラムの型に合わせてgetInt()/getStringで値を取り出す。
-          System.out.println( rs.getInt( "id" ) );
-          System.out.println( rs.getString( "name" ) );
-          System.out.println( rs.getString( "createdate" ) );
-          System.out.println( rs.getString( "client" ) );
-          System.out.println( rs.getString( "address" ) );
+          System.out.println( rs.getString( "STAFF_NO" ) );
+          System.out.println( rs.getString( "OFFICE_CD" ) );
+          System.out.println( rs.getString( "STAFF_NAME" ) );
+          System.out.println( rs.getString( "WORK_TIME" ) );
+          System.out.println( rs.getString( "CREATE_DATE" ) );
           System.out.println( "" );
         }
       }
