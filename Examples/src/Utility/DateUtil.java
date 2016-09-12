@@ -30,6 +30,9 @@ public class DateUtil {
   /** 許容する西暦日付のフォーマットを指定する。 */
   private static DateFormat annoDominiformat = new SimpleDateFormat( "yyyy/MM/dd" );
 
+  /** 許容する西暦日付のフォーマットを指定する。 */
+  private static DateFormat mysqlDominiformat = new SimpleDateFormat( "yyyy-MM-dd" );
+
   /** TimeStamp変換元のフォーマットを指定する。 */
   private static DateFormat annoDominiformatLD = new SimpleDateFormat( "yyyy/MM/dd HH:mm:ss" );
 
@@ -68,6 +71,27 @@ public class DateUtil {
       // 日付の妥当性チェックの精度は"厳密"を指定。
       defaultFormat.setLenient( false );
       defaultFormat.parse( value );
+    } catch ( ParseException e ) {
+      // 変換失敗時は不正日付。
+      return false;
+    }
+    // 変換に成功すれば正しい日付とみなす。
+    return true;
+  }
+
+  /**
+   * 日付チェック("yyyy-MM-dd")<br />
+   * 不正日付の場合はfalseを返します。 <br />
+   *
+   * @param value 対象の文字列
+   * @return チェック結果
+   */
+  public static boolean isMysqlDate( String value ) {
+
+    try {
+      // 日付の妥当性チェックの精度は"厳密"を指定。
+      mysqlDominiformat.setLenient( false );
+      mysqlDominiformat.parse( value );
     } catch ( ParseException e ) {
       // 変換失敗時は不正日付。
       return false;
@@ -203,6 +227,39 @@ public class DateUtil {
         // 西暦表記("yyyy/MM/dd")の場合
       } else if ( isDate( value ) ) {
         return defaultFormat.format( annoDominiformat.parse( value ).getTime() );
+        // 上記以外はnullを返却
+      } else {
+        return null;
+      }
+    // 変換できなかった場合は、nullを返却
+    } catch ( ParseException e ) {
+      return null;
+    }
+  }
+
+  /**
+   * 西暦変換<br />
+   * 西暦表記("yyyy/MM/dd")を西暦表記("yyyy-MM-dd")の相互変換を行います。 <br />
+   *
+   * @param value 対象の文字列
+   * @return 正しい日付：変換結果 不正日付：nullを返却
+   */
+  public static String formatDDtoMD( String value ) {
+
+    // 変換用の日付型変数とチェックの精度を指定
+    Date date = null;
+    annoDominiformat.setLenient( false );
+    mysqlDominiformat.setLenient( false );
+
+    // この例ではparseで一度date型の秒単位に変換し、formatで再変換を掛けている。
+    // 単純に文字列操作で"/"を付けはずししても良いが、その場合は日付形式のチェックの実装が必要。
+    try {
+      // 西暦表記("yyyyMMdd")の場合
+      if ( isDefaultDate( value ) ) {
+        return mysqlDominiformat.format( annoDominiformat.parse( value ).getTime() );
+        // 西暦表記("yyyy-MM-dd")の場合
+      } else if ( isMysqlDate( value ) ) {
+        return annoDominiformat.format( mysqlDominiformat.parse( value ).getTime() );
         // 上記以外はnullを返却
       } else {
         return null;
