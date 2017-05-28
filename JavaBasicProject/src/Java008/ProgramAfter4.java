@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java008;
@@ -15,7 +15,7 @@ import Java007.Member;
  * <br />
  * 社員情報を配列からリストへ格納 <br />
  * String配列のデータを社員情報リストに格納し、設定した情報を表示する。 <br />
- * 更新履歴 2015/11/01 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class ProgramAfter4 {
 

@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java003;
@@ -9,7 +9,7 @@ package Java003;
  * Java003 問3の解答例 <br />
  * 「*」の階段 <br />
  * 「*」の階段を画面表示する <br />
- * 更新履歴 2015/10/04 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class Test13 {
 

@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
  * <br />
  * コンソールから入力された複数行の文字列をため込み、 <br />
  * あらかじめ定義された終了文字（end）が入力された場合に、一括で出力する処理を作成する。 <br />
- * 更新履歴 2015/10/04 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class ConsoleInTest {
 

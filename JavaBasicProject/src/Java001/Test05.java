@@ -1,16 +1,16 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java001;
 
 /**
  * Test05 <br />
- * Java001 問4の解答例 <br />
+ * Java001 問5の解答例 <br />
  *
  * コンソール表示 <br />
  * コンソールに表示する <br />
- * 更新履歴 2015/10/04 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class Test05 {
 

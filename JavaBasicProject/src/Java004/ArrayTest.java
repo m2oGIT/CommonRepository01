@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java004;
@@ -14,7 +14,7 @@ import java.io.InputStreamReader;
  * 最大値取得処理 <br />
  * コンソールより、整数を5回入力させ、最大値をコンソール出力する <br />
  * ただし、整数以外の入力があった場合は、エラーメッセージを表示し、処理を終了する <br />
- * 更新履歴 2015/10/04 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class ArrayTest {
 

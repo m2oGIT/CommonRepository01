@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java008;
@@ -22,7 +22,7 @@ import Java007.Member;
  * 出力ファイル編集処理 <br />
  * 入力ファイルの社員情報を読み取り、リストに格納する。 <br />
  * リストに格納した社員情報をもとに、出力ファイルに出力する。 <br />
- * 更新履歴 2015/11/01 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class ProgramAfter5 {
 

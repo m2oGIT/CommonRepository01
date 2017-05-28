@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java002;
@@ -9,7 +9,7 @@ package Java002;
  * Java002 問5の解答例 <br />
  * 加算処理 <br />
  * 渡された2種類の整数の間の数をすべて合計する <br />
- * 更新履歴 2015/10/04 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class Test10 {
 
@@ -31,8 +31,12 @@ public class Test10 {
   public static void main( String[] args ) {
 
     // 実行時引数をString型からint型へ型変換する
-    int num1 = Integer.parseInt( args[0] );
-    int num2 = Integer.parseInt( args[1] );
+    int arg1 = Integer.parseInt( args[0] );
+    int arg2 = Integer.parseInt( args[1] );
+    
+    // 第一引数と第二引数の大小関係に影響させない考慮（三項演算子）
+    int num1 = arg1 <= arg2 ? arg1 : arg2;
+    int num2 = arg1 >= arg2 ? arg1 : arg2;
 
     // Test07に新規メソッドを作成した場合は、以下の通り。
     int sum = Test07.addNum( num1, num2 );

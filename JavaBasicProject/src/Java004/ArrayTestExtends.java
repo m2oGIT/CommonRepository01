@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java004;
@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
  * Java004 問1～問2の解答例（拡張for文で実装した場合） <br />
  * 拡張for文はループ制御用の変数やindex表記を減らせるが、馴染み深いのは通常のfor文。 <br />
  * どちらを使うかは状況やプログラマの好みで判断される場合が多い。 <br />
- * 更新履歴 2015/10/04 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class ArrayTestExtends {
 
@@ -47,7 +47,7 @@ public class ArrayTestExtends {
     int[] array = new int[5];
 
     // 整数を5回入力
-    for ( int i = 0; i < 5; i++ ) {
+    for ( int i = 0; i < 5; i++ ) { //値を設定する場合は、通常for文
       // 入力内容をstrに格納
       String str = br.readLine();
       // 入力内容が整数の時、配列に格納
@@ -62,7 +62,7 @@ public class ArrayTestExtends {
     // 最大値
     int max = 0;
     // 最大値を求める
-    for ( int value : array ) {
+    for ( int value : array ) { //値を取り出す場合は、拡張for文
       if ( max < value ) {
         max = value;
       }
@@ -74,7 +74,7 @@ public class ArrayTestExtends {
     // 合計値
     int sum = 0;
     // 入力した5つの整数を合計する
-    for ( int value : array ) {
+    for ( int value : array ) { //値を取り出す場合は、拡張for文
       sum += value;
     }
 

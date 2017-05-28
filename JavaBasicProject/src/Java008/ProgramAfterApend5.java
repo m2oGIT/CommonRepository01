@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java008;
@@ -15,7 +15,7 @@ import Java008.accessor.TextWriter;
  * Java008 問5の解答例（クラス分割版） <br />
  * <br />
  * 出力ファイル編集処理 <br />
- * 更新履歴 2015/11/01 山本 高志：新規作成 <br />
+ * 更新履歴 2017/05/28 山本 高志：新規作成 <br />
  */
 public class ProgramAfterApend5 {
 

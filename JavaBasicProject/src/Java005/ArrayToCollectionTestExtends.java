@@ -11,23 +11,20 @@ import java.util.ArrayList;
 
 /**
  * ArrayToCollectionTest <br />
- * Java005 問1～問2の解答例 <br />
+ * Java005 問4の解答例 <br />
  * 最大値取得処理 <br />
  * <br />
- * コンソールより、整数を入力させ、最大値をコンソール出力する <br />
+ * コンソールより入力回数を含む整数を入力させ、最大値をコンソール出力する <br />
  * ただし、整数以外の入力があった場合は、エラーメッセージを表示し、処理を終了する <br />
- * 更新履歴 2017/05/28 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/16 山本 高志：新規作成 <br />
  */
-public class ArrayToCollectionTest {
-
-  /** 繰り返し回数を定数化 */
-  private static final int REPEAT_NUM = 5;
+public class ArrayToCollectionTestExtends {
 
   /**
    * コンストラクタ <br />
    * デフォルトコンストラクタ <br />
    */
-  public ArrayToCollectionTest() {
+  public ArrayToCollectionTestExtends() {
     // 行うべき処理なし。
     super();
   }
@@ -42,32 +39,40 @@ public class ArrayToCollectionTest {
    */
   public static void main( String[] args ) throws IOException {
 
-    // 入力指示を表示
-    System.out.println( "整数を" + REPEAT_NUM + "回入力してください。" );
-    System.out.println();
-
     // コンソール入力用クラスのインスタンスを宣言
     BufferedReader br = new BufferedReader( new InputStreamReader( System.in ) );
+
+    // 入力回数を格納する変数
+    int InputNum = 0;
 
     // 入力内容を格納する配列
     ArrayList<Integer> array = new ArrayList<Integer>();
 
-    // 指定回数だけ繰り返す
-    for ( int i = 0; i < REPEAT_NUM; i++ ) {
+    // 入力指示を表示
+    System.out.println( "入力回数を指定してください。" );
+    System.out.println();
 
-      // 入力した文字列をString型変数に格納する
-      String str = br.readLine();
+    // 入力した文字列をString型変数に格納する
+    String str = br.readLine();
 
+    try {
       // 入力内容が整数の時、配列に格納
-      // 入力内容が整数以外の時、エラーメッセージを表示し、処理を終了
-      try {
-        array.add( Integer.parseInt( str ) );
-      } catch ( NumberFormatException e ) {
-        System.out.println( "整数ではありません。処理を終了します。" );
-        // 例外発生時は処理を抜ける。
-        return;
-      }
+      InputNum = Integer.parseInt( str );
 
+      // 入力指示を表示
+      System.out.println( "整数を" + InputNum + "回入力してください。" );
+      System.out.println();
+
+      // 指定回数だけ繰り返す
+      for ( int i = 0; i < InputNum; i++ ) {
+        // 入力した文字列をString型変数に格納する
+        str = br.readLine();
+        array.add( Integer.parseInt( str ) );
+      }
+    } catch ( NumberFormatException e ) {
+      System.out.println( "整数ではありません。処理を終了します。" );
+      // 例外発生時は処理を抜ける。
+      return;
     }
 
     // 最大値を格納する変数

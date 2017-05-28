@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java007;
@@ -13,7 +13,7 @@ package Java007;
  * 社員情報の設定 <br />
  * 社員情報の画面表示 <br />
  * 同姓同名チェック<br />
- * 更新履歴 2015/11/01 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class Member {
 

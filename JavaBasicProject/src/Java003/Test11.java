@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java003;
@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * Java003 問1の解答例 <br />
  * 計算処理 <br />
  * 0.1を10回足した後、10倍にした結果を表示する <br />
- * 更新履歴 2015/10/04 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class Test11 {
 
@@ -47,7 +47,19 @@ public class Test11 {
     // 0.1を10回足した結果を10倍にする
     ans = ans.multiply( ten );
     // 計算結果を出力する
-    System.out.println( "0.1を10回足した後、10倍にした結果：" + ans );
+    System.out.println( "（BigDecimal）0.1を10回足した後、10倍にした結果：" + ans );
+
+    // （参考用）BigDecimalを使わなかった場合
+    double dbl_ans = 0.0;
+
+    // 0.1を10回足す
+    for ( int i = 1; i <= 10; i++ ) {
+      dbl_ans += 0.1;
+    }
+    // 10倍にする
+    dbl_ans = dbl_ans * 10;
+    // 計算結果を出力する
+    System.out.println( "（double）    0.1を10回足した後、10倍にした結果：" + dbl_ans );
 
   }
 }

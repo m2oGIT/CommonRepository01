@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java002;
@@ -9,7 +9,7 @@ package Java002;
  * Java002 問3の解答例 <br />
  * 加算処理 <br />
  * 1～実行時引数までの数値をループで回して、加算する <br />
- * 更新履歴 2015/10/04 林 花織：新規作成 <br />
+ * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class Test09 {
 

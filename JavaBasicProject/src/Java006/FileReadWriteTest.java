@@ -1,5 +1,5 @@
 /**
- * Copyright 2015 EIS Co., Ltd. All rights reserved.
+ * Copyright 2017 EIS Co., Ltd. All rights reserved.
  */
 
 package Java006;
@@ -21,7 +21,7 @@ import java.util.Date;
  * /practice/run/file/text.txtというファイルに対し、 <br />
  * 実行時に与えた文字列と、実行時の日時を追加書込で書き込む処理を作成する。 <br />
  * また同一クラス内に、上記の対象ファイルを読み込み、内容をコンソールに表示する処理を作成する。 <br
- * * 更新履歴 2015/10/04 林 花織：新規作成 <br />
+ * * 更新履歴 2017/05/28 林 花織：新規作成 <br />
  */
 public class FileReadWriteTest {
 
